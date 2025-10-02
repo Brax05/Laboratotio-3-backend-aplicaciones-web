@@ -50,7 +50,9 @@ Servidor por defecto en http://localhost:5000
 1. Dentro de la carpeta frontend (por ejemplo `frontend/`):
 
 npm install
+---
 npm install bootstrap
+---
 npm start
 
 
