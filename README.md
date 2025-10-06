@@ -1,6 +1,26 @@
 # Mi Gestor de Tareas
 
 Proyecto backend con Flask y SQLite y frontend con React para gestión de tareas con autenticación JWT.
+Frontend
+
+•
+Framework: React
+
+•
+Librería de UI: Bootstrap
+
+•
+Backend
+
+•
+Framework: Flask
+
+•
+Base de Datos: SQLite (local)
+
+•
+
+Autenticación: Flask-JWT-Extended
 
 ---
 
@@ -20,13 +40,16 @@ Proyecto backend con Flask y SQLite y frontend con React para gestión de tareas
 1. Crear y activar entorno virtual:
 
 python -m venv venv
+-
 source venv/bin/activate # Linux
+-
 venv\Scripts\activate # Windows
 
 
 2. Instalar dependencias:
 
 pip install -r requirements.txt
+-
 los requierements son las librerias a instalar se encuantran en la carpeta del backend.
 
 
