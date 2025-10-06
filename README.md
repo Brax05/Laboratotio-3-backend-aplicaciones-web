@@ -80,13 +80,12 @@ npm start
 
 
 si hay problemas 
+-
 react-scripts.js: not found
+-
 se elimina rm -rf node_modules package-lock.json
-
- e reinstalar
- npm start
-
-text
+-
+reinstalar, npm start
 
 El frontend corre en http://localhost:3000
 
