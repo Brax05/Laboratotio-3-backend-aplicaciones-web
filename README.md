@@ -1,76 +1,79 @@
-# Laboratorio 3: Backend y Frontend para Aplicaciones Web
+Mi Gestor de Tareas - API Backend
+Este es el repositorio del backend (API) para el proyecto "Mi Gestor de Tareas". Esta API está construida con Flask y MongoDB, y se encarga de gestionar la autenticación de usuarios y las operaciones CRUD (Crear, Leer, Actualizar, Borrar) de las tareas.
 
-## Introducción
+🚀 Stack de Tecnologías
+Backend
+Flask: Framework principal de Python.
 
-Este proyecto consiste en el desarrollo de una aplicación web completa, que integra un backend implementado en Python (Flask) y un frontend desarrollado en React.  
-El objetivo es comprender la interacción entre ambos componentes dentro de un entorno web moderno, así como el proceso de despliegue en una plataforma en la nube.
+MongoDB: Base de datos NoSQL.
 
-## Estructura del Proyecto
+PyMongo: Driver oficial para conectar Python con MongoDB.
 
-El repositorio está organizado en dos carpetas principales:
+Flask-JWT-Extended: Para la autenticación usando JSON Web Tokens (JWT).
 
-| Carpeta   | Descripción                                            |
-|-----------|-------------------------------------------------------|
-| backend/  | Contiene la API RESTful desarrollada con Flask.       |
-| frontend/ | Contiene la interfaz de usuario desarrollada en React.|
+Flask-Bcrypt: Para el hasheo seguro de contraseñas.
 
-## Backend (API Flask)
+Flask-Cors: Para manejar el Cross-Origin Resource Sharing (CORS).
 
-### Descripción General
+Gunicorn: (Recomendado) Servidor WSGI para producción.
 
-El backend es una aplicación desarrollada con Flask, utilizando SQLite como base de datos por defecto.  
-En entornos de producción, puede ejecutarse con Gunicorn y se recomienda reemplazar SQLite por una base de datos persistente como PostgreSQL o MongoDB.
+Frontend
+Bootstrap: (Mencionado) Framework de UI/CSS.
 
-### Despliegue en Railway
+(Probablemente HTML, CSS, y JavaScript o un framework como React/Vue).
 
-1. Crear un nuevo servicio en Railway y seleccionar:
-   - “Deploy from GitHub Repo”, o
-   - “Deploy from a Monorepo”.
-2. Configurar el Root Directory del servicio como:
-   - `backend/`
+⚙️ Configuración para Desarrollo Local
+Sigue estos pasos para correr el proyecto en tu máquina local.
 
-> Este paso es esencial para que Railway detecte los archivos `requirements.txt` y `Procfile` correspondientes al backend.
+1. Prerrequisitos
+Python 3.10 o superior.
 
-3. Agregar las siguientes variables de entorno:
+Una instancia local de MongoDB o una cuenta gratuita en MongoDB Atlas.
 
-| Variable         | Valor de Ejemplo         | Descripción                                              |
-|------------------|-------------------------|----------------------------------------------------------|
-| JWT_SECRET_KEY   | tu_clave_secreta_segura | Clave secreta utilizada para la generación de tokens JWT.|
+2. Clonar el Repositorio
+Bash
 
-4. El archivo `Procfile` debe contener el comando de ejecución para el despliegue:
+git clone <URL_DE_TU_REPOSITORIO>
+cd <NOMBRE_DEL_DIRECTORIO>
+3. Crear un Entorno Virtual
+Bash
 
+# Crear el entorno
+python -m venv venv
 
-## Frontend (Aplicación React)
+# Activar en Windows
+.\venv\Scripts\activate
 
-### Descripción General
+# Activar en macOS/Linux
+source venv/bin/activate
+4. Instalar Dependencias
+Asegúrate de tener todas estas librerías en tu archivo requirements.txt:
 
-El frontend corresponde a una aplicación creada con React, que consume la API proporcionada por el backend.  
-Permite al usuario interactuar con la aplicación mediante una interfaz dinámica e intuitiva.
+Flask
+Flask-JWT-Extended
+Flask-Cors
+Flask-Bcrypt
+pymongo
+python-dotenv
+gunicorn
+werkzeug<3.0.0
+Luego, instálalas:
 
-### Despliegue en Railway
+Bash
 
-1. Crear un segundo servicio en Railway (dentro del mismo proyecto).
-2. Configurar el Root Directory del servicio como:
-   - `frontend/`
-3. Agregar la siguiente variable de entorno:
+pip install -r requirements.txt
+5. Configurar Variables de Entorno
+Crea un archivo llamado .env en la raíz del proyecto y añade las siguientes variables:
 
-| Variable            | Valor de Ejemplo                                                        | Descripción                            |
-|---------------------|------------------------------------------------------------------------|----------------------------------------|
-| REACT_APP_API_URL   | https://nombre-de-tu-backend.up.railway.app/api                        | URL base de la API del backend         |
+Fragmento de código
 
-> Una vez desplegado el backend, reemplazar el valor de `REACT_APP_API_URL` con la URL pública generada por Railway.
+# URL de conexión a tu base de datos MongoDB (local o de Atlas)
+MONGO_URI="mongodb://localhost:27017/mi_gestor"
 
-## Tecnologías Utilizadas
+# Clave secreta para firmar los tokens JWT (puede ser cualquier string aleatorio)
+JWT_SECRET_KEY="tu-clave-secreta-super-segura"
+6. Ejecutar la Aplicación
+Bash
 
-**Backend:**
-- Python (Flask)
-- SQLite / PostgreSQL
-- JWT (Autenticación)
-- Gunicorn (Servidor WSGI)
-
-**Frontend:**
-- React (con Vite)
-- Tailwind CSS
-- Axios (para consumo de la API)
-
-
+python app.py
+La API estará corriendo en http://localhost:5000 (o el puerto por defecto de Flask).
