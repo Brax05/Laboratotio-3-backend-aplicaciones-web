@@ -2,11 +2,6 @@
 
 Este proyecto es una aplicación web completa que incluye un **backend** desarrollado con **Python (Flask)** y un **frontend** desarrollado con **React**.
 
-El error de despliegue en Railway ("Error creating build plan with Railpack") se debe a que Railway no pudo identificar automáticamente el tipo de proyecto ni el comando de inicio. Para solucionarlo, se han realizado las siguientes modificaciones en el proyecto:
-
-1.  **Se ha renombrado `backend/requi.txt` a `backend/requirements.txt`** para que el Buildpack de Python de Railway lo detecte automáticamente.
-2.  **Se ha añadido `gunicorn`** al archivo `backend/requirements.txt` para servir la aplicación Flask en producción.
-3.  **Se ha creado un archivo `backend/Procfile`** para indicar a Railway cómo iniciar el servidor web.
 
 ## Estructura del Proyecto
 
@@ -14,10 +9,6 @@ El proyecto está dividido en dos directorios principales:
 
 *   `backend/`: Contiene la API RESTful desarrollada con Flask.
 *   `frontend/`: Contiene la interfaz de usuario desarrollada con React.
-
-## Despliegue en Railway
-
-Dado que este proyecto es una monorepo con un backend en Python y un frontend en React, la forma más sencilla de desplegarlo en Railway es **desplegar cada parte como un servicio separado**.
 
 ### 1. Despliegue del Backend (API Flask)
 
@@ -69,9 +60,4 @@ El frontend es una aplicación React que se conecta a la API del backend.
 | :--- | :--- | :--- |
 | `REACT_APP_API_URL` | `https://nombre-de-tu-backend.up.railway.app/api` | URL base de la API del backend. |
 
-## Conclusión y Próximos Pasos
 
-El error inicial de Railpack ha sido corregido al renombrar el archivo de dependencias y añadir el `Procfile`. El problema actual se resuelve **configurando el "Root Directory"** en la interfaz de Railway para cada servicio.
-
----
-*Documento generado por **Manus AI***
