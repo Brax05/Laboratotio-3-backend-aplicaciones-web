@@ -1,8 +1,0 @@
-Flask
-gunicorn
-Flask-JWT-Extended
-Flask-Cors
-python-dotenv
-werkzeug<3.0.0
-pymongo
-flask-bcrypt
