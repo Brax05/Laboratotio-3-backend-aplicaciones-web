@@ -30,12 +30,9 @@ except Exception as e:
 
 # Seleccionar la base de datos y colecciones
 if client:
-    db = client.get_database() # O usa client['mi_gestor'] si el nombre de la DB no está en la URI
+    db = client['mi_gestor'] # <-- Esta es la forma más simple
     users = db.users
     tasks = db.tasks
-else:
-    print("FATAL: No se pudo conectar a la base de datos. La aplicación no funcionará.")
-    # Podrías querer que la app falle aquí, pero la dejaremos seguir para ver el error en la raíz
 
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
