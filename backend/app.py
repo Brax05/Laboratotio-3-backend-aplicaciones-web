@@ -30,7 +30,7 @@ except Exception as e:
 
 # Seleccionar la base de datos y colecciones
 if client:
-    db = client['mi_gestor'] # <-- Esta es la forma más simple
+    db = client['mi_gestor'] # <-- Esta es a de cambiarse 
     users = db.users
     tasks = db.tasks
 
