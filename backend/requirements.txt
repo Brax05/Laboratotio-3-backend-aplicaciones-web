@@ -5,3 +5,4 @@ flask-jwt-extended==4.4.0
 bcrypt==4.0.1
 python-dotenv==1.0.0
 gunicorn
+Werkzeug<3.0.0
